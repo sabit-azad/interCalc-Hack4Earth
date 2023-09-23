@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>InterCalc</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            function calculateInterest() {
+                var principal = parseFloat(document.getElementById("principal").value);
+                var rate = parseFloat(document.getElementById("rate").value);
+                var time = parseFloat(document.getElementById("time").value);
+
+                var interest = (principal * rate * time) / 100;
+                var totalAmount = principal + interest;
+
+                document.getElementById("interest").innerHTML = "Interest: " + interest.toFixed(2) + " Taka";
+                document.getElementById("total").innerHTML = "Total Amount: " + totalAmount.toFixed(2) + " Taka";
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>InterCalc (Interest Calculator)</h1>
+
+        <div class="input-container">
+            <label for="principal">Principal Amount:</label>
+            <input type="text" id="principal" placeholder="Enter principal amount">
+        </div>
+
+        <div class="input-container">
+            <label for="rate">Interest Rate:</label>
+            <input type="text" id="rate" placeholder="Enter interest rate">
+        </div>
+
+        <div class="input-container">
+            <label for="time">Time (in years):</label>
+            <input type="text" id="time" placeholder="Enter time in years">
+        </div>
+
+        <button onclick="calculateInterest()">Calculate</button>
+
+        <div id="result">
+            <p id="interest"></p>
+            <p id="total"></p>
+        </div>
+    </body>
+
+</html>
